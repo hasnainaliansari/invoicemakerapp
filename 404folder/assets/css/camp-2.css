@@ -1,0 +1,180 @@
+.M18ReadMoreContent_M18ReadMoreContent__g8ldd .M18ReadMoreContent_button__AFHCS {
+	display: block;
+	text-decoration: none;
+	margin-block-start: var(--space-2);
+}
+
+.M18ReadMoreContent_M18ReadMoreContent__g8ldd .M18ReadMoreContent_button__AFHCS .M18ReadMoreContent_label__HIAyy {
+	display: flex;
+	align-items: center;
+	gap: var(--space-1);
+}
+
+.M18ReadMoreContent_M18ReadMoreContent__g8ldd .M18ReadMoreContent_toggleDescription__q0n3M {
+	white-space: pre-wrap;
+}
+
+.M18ReadMoreContent_M18ReadMoreContent__g8ldd .M18ReadMoreContent_icon__igGXS {
+	--icon-size: 12px;
+}
+
+:root {
+	--optionIconPadding: 3px;
+	--checkedInputAnimation: 0.3s option-label-marker-expansion cubic-bezier(0.32,2.32,0.61,0.27) forwards;
+}
+
+@keyframes option-label-marker-expansion {
+	0% {
+		transform: scale(0);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
+
+.option__label {
+	cursor: pointer;
+	display: block;
+	padding: 10px 0;
+	position: relative;
+}
+
+[data-focus-source=keyboard] .option__input:focus+.option__label {
+	border-color: transparent;
+	outline: 2px solid #611f69;
+}
+
+.option__labelMarker {
+	border: 1.5px solid #611f69;
+	color: transparent;
+}
+
+.option__input:checked+.option__label .option__labelMarker {
+	background-color: #611f69;
+	border-color: #611f69;
+	color: var(--colorTextWhite);
+}
+
+.option--checkbox .option__labelMarker {
+	border-radius: 25%;
+}
+
+.option--radio .option__labelMarker {
+	border-radius: 50%;
+}
+
+.option__labelIcon {
+	margin: auto;
+}
+
+.option__radioIcon {
+	height: 24px;
+	width: 24px;
+	border-radius: 50%;
+	border: 1px solid #611f69;
+	position: relative;
+}
+
+.option__input:checked+.option__label .option__radioIcon:before {
+	position: absolute;
+	top: 3px;
+	top: var(--optionIconPadding);
+	right: 3px;
+	right: var(--optionIconPadding);
+	bottom: 3px;
+	bottom: var(--optionIconPadding);
+	left: 3px;
+	left: var(--optionIconPadding);
+	content: "";
+	border-radius: 50%;
+	background-color: #611f69;
+}
+
+.option__input:checked+.option__label .option__labelIcon,.option__input:checked+.option__label .option__radioIcon:before {
+	animation: option-label-marker-expansion .3s cubic-bezier(.32,2.32,.61,.27) forwards;
+	animation: var(--checkedInputAnimation);
+}
+
+.option__labelText {
+	padding-top: 2px;
+	padding-left: 10px;
+	min-width: 0;
+}
+
+.M06Radio_M06Radio__Ovu8w .M06Radio_content__8vrZC {
+	display: flex;
+	flex-direction: column;
+}
+
+.M06Radio_M06Radio__Ovu8w .M06Radio_subLabel__uXs8m {
+	color: var(--colorBlack58);
+}
+
+.M06Radio_M06Radio__Ovu8w .flex {
+	align-items: center;
+}
+
+[dir=rtl] .M06Radio_M06Radio__Ovu8w .option__labelText {
+	padding-inline-start: 10px;
+}
+
+.M07RadioGroup_M07RadioGroup__AlkjP .M07RadioGroup_labelWrapper__eWWtD {
+	display: flex;
+	flex-direction: column;
+}
+
+.M07RadioGroup_M07RadioGroup__AlkjP .M07RadioGroup_subLabel__1HB7e {
+	color: var(--colorBlack58);
+}
+
+@media(min-width:768px) {
+	.M07RadioGroup_M07RadioGroup__AlkjP .M07RadioGroup_labelWrapper__eWWtD {
+		margin-block-end: 10px;
+	}
+}
+
+.M28CustomizationRadio_M28CustomizationRadio__wRXOa {
+	padding: var(--space-2) 0;
+}
+
+.M28CustomizationRadio_M28CustomizationRadio__wRXOa .M28CustomizationRadio_content__i8i03 {
+	display: flex;
+	align-items: center;
+}
+
+.M28CustomizationRadio_M28CustomizationRadio__wRXOa .M28CustomizationRadio_textWrapper__NJbcv {
+	display: flex;
+	flex-direction: column;
+}
+
+.M28CustomizationRadio_M28CustomizationRadio__wRXOa .M28CustomizationRadio_image__UtNbB {
+	margin-inline-end: 22px;
+	background: none;
+}
+
+.M28CustomizationRadio_M28CustomizationRadio__wRXOa .M28CustomizationRadio_subLabel__SpK2T {
+	color: var(--colorBlack58);
+}
+
+.M28CustomizationRadio_M28CustomizationRadio__wRXOa .flex {
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.M28CustomizationRadio_M28CustomizationRadio__wRXOa .option__input+.option__label {
+	padding: 24px 20px;
+	border: 1px solid var(--colorBlack12);
+	border-radius: var(--border-radius-large);
+	transition: var(--transitionDuration1) ease-in-out;
+}
+
+.M28CustomizationRadio_M28CustomizationRadio__wRXOa .option__input:hover+.option__label {
+	background-color: var(--colorGreyCeramic);
+}
+
+.M28CustomizationRadio_M28CustomizationRadio__wRXOa .option__input+.option__label .option__radioIcon {
+	background-color: var(--colorWhite);
+}
+

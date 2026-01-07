@@ -1,0 +1,222 @@
+.hero-app-image {
+    display: flex;
+    justify-content: center;
+    margin: 32px 0;
+}
+
+.hero-app-image img {
+    max-width: 100%;
+    width: 700px;
+    border-radius: 16px;
+}
+
+/* COUNTERS */
+.hero-counters {
+    background: #f7f6f5;
+    padding: 60px 0;
+}
+
+.counters-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    text-align: center;
+}
+
+.counter-box {
+    background: #ffffff;
+    padding: 32px 16px;
+    border-radius: 12px;
+}
+
+.counter-box h3 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.counter-box p {
+    font-size: 14px;
+    color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .counters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+.paylync-aboutus-cards-section {
+    /* padding: 90px 0; */
+}
+
+.paylync-aboutus-heading {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.paylync-aboutus-text {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 56px;
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+.paylync-aboutus-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.paylync-aboutus-card {
+    background: #f7f6f5;
+    border-radius: 20px;
+    padding: 36px 28px;
+    text-align: center;
+    transition: all 0.35s ease;
+}
+.paylync-aboutus-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* 🔥 center horizontally */
+    justify-content: center;
+}
+
+
+
+
+.paylync-aboutus-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+}
+
+.paylync-aboutus-card img {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 20px;
+}
+
+.paylync-aboutus-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.paylync-aboutus-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .paylync-aboutus-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .paylync-aboutus-heading {
+        font-size: 32px;
+    }
+
+    .paylync-aboutus-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.paylync-products-section {
+    padding: 100px 0;
+    background: #f7f6f5;
+    margin-top: 3rem;
+}
+
+.paylync-products-heading {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.paylync-products-text {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 60px;
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+.paylync-products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.paylync-product-card {
+    background: #fff;
+    padding: 40px 36px;
+    border-radius: 24px;
+    transition: all 0.35s ease;
+    border-left: solid 8px;
+}
+
+.paylync-product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.08);
+}
+
+.paylync-product-badge {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    opacity: 0.7;
+}
+
+.paylync-product-card h3 {
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.paylync-product-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.85;
+}
+
+.paylync-product-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.paylync-product-card ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.paylync-product-card ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .paylync-products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .paylync-products-heading {
+        font-size: 32px;
+    }
+}

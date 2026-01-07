@@ -1,0 +1,367 @@
+@font-face{
+    font-family:"Inter";
+    src:url("font/static/Inter_18pt-Regular.ttf") format("truetype");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap;
+  }
+  @font-face{
+    font-family:"Inter";
+    src:url("font/static/Inter_18pt-Medium.ttf") format("truetype");
+    font-weight:500;
+    font-style:normal;
+    font-display:swap;
+  }
+  @font-face{
+    font-family:"Inter";
+    src:url("font/static/Inter_18pt-SemiBold.ttf") format("truetype");
+    font-weight:600;
+    font-style:normal;
+    font-display:swap;
+  }
+  @font-face{
+    font-family:"Inter";
+    src:url("font/static/Inter_18pt-Bold.ttf") format("truetype");
+    font-weight:700;
+    font-style:normal;
+    font-display:swap;
+  }
+  
+  @font-face{
+    font-family:"Instrument Serif";
+    src:url("font/InstrumentSerif-Regular.ttf") format("truetype");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap;
+  }
+  @font-face{
+    font-family:"Instrument Serif";
+    src:url("font/InstrumentSerif-Italic.ttf") format("truetype");
+    font-weight:400;
+    font-style:italic;
+    font-display:swap;
+  }
+  
+  body{
+    font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  h1,h2{
+    font-family:"Instrument Serif", Georgia, "Times New Roman", serif;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: white;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-us {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0px;
+    max-width: 1200px;
+    margin: auto;
+    /* background-color: #ffffff; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    /* border-radius: 8px; */
+    margin-top: 8rem;
+}
+
+.contact-info,
+.contact-form,
+.support-info {
+    width: 48%;
+    /* Adjusted for layout consistency */
+    margin-bottom: 20px;
+}
+
+.contact-info h2 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.contact-info p,
+.support-info p {
+    font-family: 'Inter', sans-serif !important;
+    margin: 10px 0;
+    font-size: 0.8rem;
+}
+
+.contact-details {
+    background-color: #f7f6f5;
+    padding: 20px;
+    border-radius: 24px;
+    margin-top: 45px;
+}
+
+.contact-details div {
+    margin: 50px 0;
+}
+
+.email,
+.address {
+    margin-bottom: 10px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.privacy-policy {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.privacy-policy input {
+    margin-right: 10px;
+}
+
+.privacy-policy a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.privacy-policy a:hover {
+    /* text-decoration: underline; */
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #000000;
+    /* Black background */
+    color: #fff;
+    border: none;
+    border-radius: .8rem;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #333333;
+    /* Lighter black for hover */
+}
+
+button:focus {
+    outline: none;
+}
+/* SECTION WRAPPERS */
+.contact-section-wrapper {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.support-section-wrapper {
+    max-width: 1200px;
+    margin: 3rem auto;
+}
+
+/* SUPPORT 2-COLUMN ROW */
+.support-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* RIGHT BUTTON COLUMN */
+.support-button {
+    width: 48%;
+    text-align: right;
+}
+/* ===== SUPPORT REDESIGN ===== */
+
+.support-redesign {
+    /* background-color: #ffffff; */
+    border-radius: 24px;
+    padding: 50px 40px;
+}
+
+.support-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* LEFT SIDE */
+.support-left {
+    width: 60%;
+}
+
+.support-tag {
+    display: inline-block;
+    font-size: 32px;
+    letter-spacing: 2px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.support-left h3 {
+    font-size: 42px;
+    font-weight: 500;
+    margin: 15px 0 20px;
+    line-height: 1.2;
+}
+
+.support-left p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+/* RIGHT SIDE */
+.support-right {
+    width: 35%;
+    text-align: center;
+}
+
+.support-email {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #000;
+}
+/* ===========================
+   RESPONSIVE STYLES
+=========================== */
+
+/* -------- TABLET -------- */
+@media (max-width: 991px) {
+
+    .contact-us {
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-info h2 {
+        font-size: 40px;
+    }
+
+    /* SUPPORT */
+    .support-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .support-left,
+    .support-right {
+        width: 100%;
+        text-align: left;
+    }
+
+    .support-right {
+        text-align: left;
+    }
+
+    .support-email {
+        font-size: 22px;
+    }
+}
+
+/* -------- MOBILE -------- */
+@media (max-width: 767px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .contact-us {
+        margin-top: 3rem;
+    }
+
+    .contact-info h2 {
+        font-size: 32px;
+    }
+
+    .contact-info p,
+    .support-left p {
+        font-size: 13px;
+    }
+
+    .contact-details {
+        padding: 16px;
+        margin-top: 25px;
+    }
+
+    .contact-details div {
+        margin: 30px 0;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .privacy-policy {
+        align-items: flex-start;
+        font-size: 12px;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+    }
+
+    /* SUPPORT SECTION */
+    .support-redesign {
+        padding: 30px 20px;
+    }
+
+    .support-tag {
+        font-size: 18px;
+    }
+
+    .support-left h3 {
+        font-size: 28px;
+    }
+
+    .support-email {
+        font-size: 18px;
+    }
+    .contact-section-wrapper{
+        margin-top: 8rem;
+    }
+}
+
+/* -------- SMALL MOBILE -------- */
+@media (max-width: 480px) {
+
+    .contact-info h2 {
+        font-size: 26px;
+    }
+
+    .support-left h3 {
+        font-size: 24px;
+    }
+
+    .support-tag {
+        font-size: 16px;
+    }
+}

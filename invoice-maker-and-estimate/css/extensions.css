@@ -1,0 +1,443 @@
+@font-face{
+	font-family:"Inter";
+	src:url("../font/static/Inter_18pt-Regular.ttf") format("truetype");
+	font-weight:400;
+	font-style:normal;
+	font-display:swap;
+  }
+  @font-face{
+	font-family:"Inter";
+	src:url("../font/static/Inter_18pt-Medium.ttf") format("truetype");
+	font-weight:500;
+	font-style:normal;
+	font-display:swap;
+  }
+  @font-face{
+	font-family:"Inter";
+	src:url("../font/static/Inter_18pt-SemiBold.ttf") format("truetype");
+	font-weight:600;
+	font-style:normal;
+	font-display:swap;
+  }
+  @font-face{
+	font-family:"Inter";
+	src:url("../font/static/Inter_18pt-Bold.ttf") format("truetype");
+	font-weight:700;
+	font-style:normal;
+	font-display:swap;
+  }
+  
+  @font-face {
+	font-family: "InstrumentSerif";
+	src: url("../font/InstrumentSerif/InstrumentSerif-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+  }
+  
+  @font-face {
+	font-family: "InstrumentSerif";
+	src: url("../font/InstrumentSerif/InstrumentSerif-Italic.ttf") format("truetype");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+  }
+  
+  h1, h2 {
+	font-family: "InstrumentSerif" !important;
+  }
+  
+  body{
+	font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+ body {
+	font-family: "Inter", sans-serif !important;
+ }
+.fontSegoePrint {
+	font-family: "Inter", sans-serif !important;
+	font-size: 1.2rem;
+
+}
+.paylync-extensions-hero {
+  background: transparent;
+  color: #000;
+  padding: 142px 0 56px;
+}
+
+.paylync-extensions-container {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  text-align: center;
+}
+
+.paylync-extensions-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 26px;
+  color: #000;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.paylync-extensions-badge-icon {
+  display: block;
+}
+
+.paylync-extensions-heading {
+  margin: 0 auto;
+  max-width: 980px;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: #000;
+}
+
+.paylync-extensions-subheading {
+  margin: 18px auto 0;
+  max-width: 760px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.72);
+  font-family: 'Inter', sans-serif !important;
+}
+
+.paylync-extensions-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+.paylync-extensions-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: .8rem;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.paylync-extensions-btn:hover {
+  transform: translateY(-1px);
+}
+
+.paylync-extensions-btn-primary {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.paylync-extensions-btn-primary:hover {
+  background: rgba(0, 0, 0, 0.88);
+  border-color: rgba(0, 0, 0, 0.88);
+}
+
+.paylync-extensions-btn-outline {
+  background: transparent;
+  color: #000;
+  border-color: rgba(0, 0, 0, 0.28);
+}
+
+.paylync-extensions-btn-outline:hover {
+  border-color: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.paylync-extensions-media {
+  margin: 44px auto 0;
+  max-width: 1120px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.paylync-extensions-media-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .paylync-extensions-hero {
+    padding: 131px 0 44px;
+  }
+
+  .paylync-extensions-subheading {
+    font-size: 16px;
+  }
+
+  .paylync-extensions-btn {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .paylync-extensions-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 6px;
+    border-radius: .8rem;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+    font-family: 'Inter', sans-serif !important;
+  }
+  .paylync-extensions-section-padding {
+    padding: 0px 0;
+}
+}
+
+.paylync-extensions-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.paylync-extensions-section-padding {
+  padding: 80px 0;
+}
+
+.paylync-extensions-feature-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.paylync-extensions-kicker {
+  display: inline-block;
+  color: var(--brand-blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.paylync-extensions-feature-heading {
+  font-size: 2.25rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-main);
+}
+
+.paylync-extensions-feature-subheading {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.paylync-extensions-check-list {
+  padding: 0;
+  margin: 0;
+}
+
+.paylync-extensions-check-list li {
+  list-style: none;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif !important;
+}
+
+.paylync-extensions-check-list li::before {
+  content: "✓";
+  color: var(--brand-blue);
+  font-weight: bold;
+}
+
+.paylync-extensions-feature-image {
+  border: 1px solid #eee;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius);
+  display: block;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .paylync-extensions-feature-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.paylync-extensions-text-center {
+  text-align: center;
+}
+
+.paylync-extensions-gateway-section {
+  background-color: var(--light-gray);
+  padding: 0px 0;
+}
+
+.paylync-extensions-gateway-heading {
+  font-size: 2.5rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-main);
+}
+
+.paylync-extensions-gateway-subheading {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.paylync-extensions-gateway-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+  opacity: 0.8;
+}
+
+.paylync-extensions-gateway-logos img {
+  height: 40px;
+  width: auto;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+
+.paylync-extensions-gateway-logos img:hover {
+  filter: grayscale(0%);
+}
+
+@media (min-width: 768px) {
+  .paylync-extensions-feature-row-reverse .paylync-extensions-feature-img {
+    order: 2;
+  }
+
+  .paylync-extensions-feature-row-reverse .paylync-extensions-feature-text {
+    order: 1;
+  }
+}
+
+.paylync-extensions-callout {
+  background: #f7f6f5;
+  border-left: 4px solid var(--brand-blue);
+  padding: 24px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 24px;
+}
+
+.paylync-extensions-callout-title {
+  margin-bottom: 8px;
+  color: var(--brand-blue);
+  font-weight: 700;
+}
+
+.paylync-extensions-callout-text {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  color: #333;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.paylync-extensions-faq-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0px 0;
+}
+
+.paylync-extensions-faq-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-main);
+}
+
+.paylync-extensions-faq-details {
+  border: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #eee !important;
+  margin: 0 !important;
+  padding: 24px 0 !important;
+}
+
+.paylync-extensions-faq-summary {
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif !important;
+}
+
+.paylync-extensions-faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.paylync-extensions-faq-summary::after {
+  content: "+";
+  font-size: 1.5rem;
+  color: var(--brand-blue);
+  font-weight: 300;
+}
+
+.paylync-extensions-faq-details[open] .paylync-extensions-faq-summary::after {
+  content: "-";
+}
+
+.paylync-extensions-faq-answer {
+  color: #555;
+  margin-top: 16px;
+  line-height: 1.6;
+  padding-right: 24px;
+  text-align: left;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 0px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}

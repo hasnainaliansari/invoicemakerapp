@@ -1,0 +1,219 @@
+/* --- DESIGN TOKENS (PayLync Style) --- */
+:root {
+    --bg-color: #FFFFFF;
+    --text-main: #000000;
+    --text-secondary: #555555;
+    --brand-black: #000000;
+    --brand-black-hover: #333333;
+    --light-gray: #F7F7F7;
+    --border-color: #E0E0E0;
+    --container-width: 600px;
+    /* Narrower container for focus on form */
+    --radius: 8px;
+}
+
+/* --- RESET --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light-gray);
+    /* Light gray background for form page */
+    color: var(--text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+}
+
+/* --- LAYOUT --- */
+.paylync-extensions-page-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.paylync-extensions-form-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: var(--container-width);
+    border: 1px solid var(--border-color);
+}
+
+/* --- HEADER & LOGO --- */
+.paylync-extensions-header-logo {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.paylync-extensions-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: -0.04em;
+    color: var(--text-main);
+}
+
+.paylync-extensions-logo-icon {
+    width: 120px; /* Adjust the size of your logo */
+    height: auto;
+}
+
+.paylync-extensions-partner-tag {
+    background: #000;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+
+/* --- FORM ELEMENTS --- */
+.paylync-extensions-form-group {
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+    background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--brand-black);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px;
+    font-weight: 600;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--brand-black);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--brand-black-hover);
+    transform: translateY(-1px);
+}
+
+.fine-print {
+    font-size: 0.8rem;
+    color: #888;
+    text-align: center;
+    margin-top: 24px;
+    line-height: 1.4;
+}
+
+/* --- CHECKBOX GROUP --- */
+.paylync-extensions-checkbox-group {
+    display: grid;
+    gap: 12px;
+}
+
+.paylync-extensions-checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.paylync-extensions-checkbox-item input {
+    margin-top: 4px;
+    accent-color: var(--brand-black);
+}
+
+.paylync-extensions-checkbox-item span {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* --- PROGRESS STEPS --- */
+.paylync-extensions-steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 8px;
+}
+
+.paylync-extensions-step-dot {
+    width: 8px;
+    height: 8px;
+    background: #ddd;
+    border-radius: 50%;
+}
+
+.paylync-extensions-step-dot.active {
+    background: var(--brand-black);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+    .paylync-extensions-form-container {
+        padding: 24px;
+    }
+}

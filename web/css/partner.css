@@ -1,0 +1,246 @@
+/* --- DESIGN TOKENS (Partner Style) --- */
+:root {
+    --bg-color: #FFFFFF;
+    --text-main: #000000;
+    --text-secondary: #555555;
+    --brand-blue: #000000; 
+    --brand-blue-hover: #000000;
+    --light-gray: #F7F7F7;
+    --border-color: #E0E0E0;
+    --container-max: 1100px;
+    --radius: 8px; 
+}
+
+/* --- RESET --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: -0.02em; 
+    line-height: 1.1;
+}
+
+p { color: var(--text-secondary); font-size: 1.125rem; margin-bottom: 1.5rem; }
+
+a { text-decoration: none; color: inherit; transition: 0.2s; }
+
+img { max-width: 100%; display: block; border-radius: var(--radius); }
+
+/* --- UTILITY --- */
+.paylync-extensions-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 30px 24px;
+}
+
+.paylync-extensions-text-center { text-align: center; }
+
+.paylync-extensions-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    font-weight: 600;
+    border-radius: .8rem;
+    font-size: 1rem;
+    cursor: pointer;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.paylync-extensions-btn-primary {
+    background-color: var(--brand-blue);
+    color: #fff;
+    border: 1px solid var(--brand-blue);
+}
+
+.paylync-extensions-btn-primary:hover {
+    background-color: var(--brand-blue-hover);
+    transform: translateY(-1px);
+}
+
+.paylync-extensions-btn-outline {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid #ccc;
+}
+
+.paylync-extensions-btn-outline:hover {
+    border-color: var(--text-main);
+    background-color: var(--light-gray);
+}
+
+/* --- HERO --- */
+.paylync-extensions-hero { padding: 150px 0 40px; text-align: center; }
+
+.paylync-extensions-hero-title { font-size: 3.5rem; max-width: 900px; margin: 0 auto 24px; }
+
+.paylync-extensions-hero-description { max-width: 700px; margin: 0 auto 32px; }
+
+.paylync-extensions-hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.paylync-extensions-hero-image-container {
+    margin-top: 60px;
+    background: var(--light-gray);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #eee;
+    box-shadow: 0 30px 60px -12px rgba(0,0,0,0.1);
+}
+
+/* --- COMPARISON TABLE --- */
+.paylync-extensions-comparison-section { padding: 80px 0; background: var(--light-gray); }
+.paylync-extensions-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.paylync-extensions-comparison-table th, .paylync-extensions-comparison-table td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.paylync-extensions-comparison-table th { background: #fafafa; font-weight: 700; color: #555; }
+.paylync-extensions-col-highlight { background: #f7f6f5; color: var(--brand-blue); font-weight: 700; }
+.paylync-extensions-check-green { color: #000000; font-weight: bold; }
+.paylync-extensions-cross-red { color: #EF4444; font-weight: bold; }
+
+/* --- FEATURE ROWS (ZigZag) --- */
+.paylync-extensions-feature-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.paylync-extensions-feature-text h2 { font-size: 2.25rem; margin-bottom: 16px; }
+
+.paylync-extensions-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.paylync-extensions-step-card {
+    background: #fff;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    position: relative;
+}
+
+.paylync-extensions-step-num {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--light-gray);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    line-height: 1;
+}
+
+.paylync-extensions-faq-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0px 0;
+}
+
+.paylync-extensions-faq-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-main);
+}
+
+.paylync-extensions-faq-details {
+  border: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid #eee !important;
+  margin: 0 !important;
+  padding: 24px 0 !important;
+}
+
+.paylync-extensions-faq-summary {
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif !important;
+}
+
+.paylync-extensions-faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.paylync-extensions-faq-summary::after {
+  content: "+";
+  font-size: 1.5rem;
+  color: var(--brand-blue);
+  font-weight: 300;
+}
+
+.paylync-extensions-faq-details[open] .paylync-extensions-faq-summary::after {
+  content: "-";
+}
+
+.paylync-extensions-faq-answer {
+  color: #555;
+  margin-top: 16px;
+  line-height: 1.6;
+  padding-right: 24px;
+  text-align: left;
+  font-family: 'Inter', sans-serif !important;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 0px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Responsive */
+
+@media (max-width: 600px){
+    .paylync-extensions-hero-stats{
+        display: grid;
+    }
+    .paylync-extensions-cta-container{
+        display: grid;
+        gap: 1rem;
+    }
+}

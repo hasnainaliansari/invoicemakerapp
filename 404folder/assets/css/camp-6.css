@@ -1,0 +1,99 @@
+.T01FormPageTemplate_T01FormPageTemplate__kBMrV {
+	inline-size: 100%;
+	overflow: clip;
+}
+
+.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_backButton__BIk9S {
+	position: absolute;
+	margin-block-start: var(--space-4);
+	grid-column: 1;
+}
+
+.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_children__yVfVh {
+	--grid-item-column-start: 1;
+	--grid-item-column-end: -1;
+	--grid-item-column: var(--grid-item-column-start) /var(--grid-item-column-end);
+	grid-column: 1/-1;
+	padding-block-start: 0;
+	padding-block-end: var(--space-9);
+	min-block-size: calc(100*var(--svh, 1vh) - var(--viewportTotalMargin, 0px));
+	block-size: -moz-fit-content;
+	block-size: fit-content;
+}
+
+.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_children__yVfVh.T01FormPageTemplate_emptyCard__3faD_ {
+	padding-block: 40px;
+}
+
+.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_children__yVfVh.T01FormPageTemplate_addCard__Bnkqo,.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_children__yVfVh.T01FormPageTemplate_backButtonIndent__HGdtZ {
+	padding-block: var(--space-9);
+}
+
+.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_panel__aoRO1 {
+	display: none;
+}
+
+@media(min-width:768px) {
+	.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_grid__B0EV2 {
+		min-block-size: calc(100vh - var(--viewportTotalMargin, 0px));
+		grid-template-rows: none;
+	}
+
+	.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_children__yVfVh {
+		--grid-column-count: 9;
+		--grid-item-column-start: 2;
+		--grid-item-column-end: -2;
+		grid-column: 1/9;
+	}
+
+	.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_children__yVfVh>* {
+		inline-size: 100%;
+	}
+
+	.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_children__yVfVh.T01FormPageTemplate_addCard__Bnkqo,.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_children__yVfVh.T01FormPageTemplate_emptyCard__3faD_ {
+		padding-block: 80px;
+	}
+
+	.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_panel__aoRO1 {
+		display: block;
+		grid-column: 9/-1;
+		position: relative;
+	}
+
+	.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_image___h7WR {
+		block-size: 100%;
+	}
+
+	.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_image___h7WR img {
+		block-size: 100%;
+		-o-object-fit: cover;
+		object-fit: cover;
+		-o-object-position: top;
+		object-position: top;
+	}
+}
+
+@media(min-width:1024px) {
+	.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_backButton__BIk9S {
+		margin-block-start: var(--space-5);
+	}
+
+	.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_children__yVfVh {
+		grid-column: 1/10;
+	}
+
+	.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_children__yVfVh.T01FormPageTemplate_backButtonIndent__HGdtZ,.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_children__yVfVh.T01FormPageTemplate_emptyCard__3faD_ {
+		grid-column: 2/8;
+		padding-block-start: 80px;
+	}
+
+	.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_panel__aoRO1 {
+		grid-column: 10/-1;
+	}
+}
+
+@media(min-width:1440px) {
+	.T01FormPageTemplate_T01FormPageTemplate__kBMrV .T01FormPageTemplate_children__yVfVh {
+		grid-column: 1/10;
+	}
+}

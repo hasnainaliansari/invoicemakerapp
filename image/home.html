@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tofu - Product Demos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- DESIGN TOKENS (Square Style) --- */
+        :root {
+            --bg-color: #FFFFFF;
+            --text-main: #000000;
+            --text-secondary: #555555;
+            --brand-blue: #006AFF; /* Square-like Electric Blue */
+            --brand-blue-hover: #0055CC;
+            --light-gray: #F7F7F7;
+            --border-color: #E0E0E0;
+            --container-max: 1200px;
+            --radius: 8px; /* Slightly tighter radius for that crisp feel */
+        }
+
+        /* --- RESET --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em; /* Tight tracking for modern look */
+            line-height: 1.1;
+        }
+
+        p { color: var(--text-secondary); font-size: 1.125rem; }
+
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+
+        img, video { max-width: 100%; display: block; border-radius: var(--radius); }
+
+        /* --- UTILITY --- */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            font-weight: 600;
+            border-radius: 50px; /* Pill shape */
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--brand-blue);
+            color: #fff;
+            border: 1px solid var(--brand-blue);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--brand-blue-hover);
+            border-color: var(--brand-blue-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid #ccc;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background-color: var(--light-gray);
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: -0.04em;
+        }
+        
+        /* Tofu Cube Logo */
+        .logo-icon {
+            width: 24px; height: 24px;
+            background: var(--text-main);
+            border-radius: 4px;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 32px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-actions { display: flex; gap: 16px; align-items: center; }
+
+        .login-link { font-weight: 600; font-size: 0.95rem; }
+
+        /* --- HERO --- */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            max-width: 800px;
+            margin: 0 auto 24px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* --- VIDEO SHOWCASE (Momentic Style Layout) --- */
+        .demo-section {
+            padding: 60px 0;
+        }
+
+        .demo-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            margin-bottom: 120px;
+            align-items: center;
+        }
+
+        .demo-text {
+            order: 2; /* Text below image on mobile */
+        }
+        
+        .demo-media {
+            order: 1;
+            position: relative;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            aspect-ratio: 16/9;
+            cursor: pointer;
+            group: hover;
+        }
+
+        .demo-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: 0.3s;
+        }
+
+        .demo-media:hover img {
+            opacity: 0.6;
+            transform: scale(1.02);
+        }
+
+        /* Play Button Overlay */
+        .play-btn {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px; height: 80px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .play-btn::after {
+            content: '';
+            display: block;
+            width: 0; height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 18px;
+            border-color: transparent transparent transparent #fff;
+            margin-left: 4px;
+        }
+
+        .demo-media:hover .play-btn {
+            background: var(--brand-blue);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* Typography for Demos */
+        .label {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--brand-blue);
+            margin-bottom: 16px;
+            display: block;
+            letter-spacing: 0.05em;
+        }
+
+        .demo-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .demo-text ul {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .demo-text li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+
+        /* Checkmark icon */
+        .demo-text li::before {
+            content: '';
+            display: inline-block;
+            width: 20px; height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23006AFF'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+
+        /* --- VIDEO GALLERY GRID (Bottom) --- */
+        .gallery-section {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .gallery-card h3 {
+            font-size: 1.25rem;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        .gallery-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* --- CTA SECTION --- */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: #000;
+            color: #fff;
+        }
+
+        .cta-section h2 { font-size: 3rem; margin-bottom: 24px; }
+        .cta-section p { color: #ccc; margin-bottom: 32px; font-size: 1.25rem; }
+        
+        /* --- FOOTER --- */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
+        }
+        .footer-bottom {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.875rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (min-width: 768px) {
+            .nav-links { display: flex; }
+            
+            .hero h1 { font-size: 4.5rem; }
+            
+            .demo-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 80px;
+            }
+
+            /* Zig Zag Logic */
+            .demo-row:nth-child(even) .demo-media { order: 2; }
+            .demo-row:nth-child(even) .demo-text { order: 1; }
+            
+            .demo-row:nth-child(odd) .demo-media { order: 1; }
+            .demo-row:nth-child(odd) .demo-text { order: 2; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <div class="logo-icon"></div>
+                    Tofu
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Business Types</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Resources</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#" class="login-link">Sign In</a>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>See how Tofu runs your business.</h1>
+            <p>From creating your first invoice to getting paid instantly. Watch our product tours to see how easy it is to manage your workflow.</p>
+            <div style="display: flex; gap: 16px; justify-content: center;">
+                <a href="#" class="btn btn-primary">Start Free Trial</a>
+                <a href="#" class="btn btn-outline">Talk to Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container demo-section">
+        
+        <div class="demo-row">
+            <div class="demo-media">
+                <img src="https://placehold.co/800x450/111/333?text=Video:+Creating+Invoices" alt="Invoicing Demo">
+                <div class="play-btn"></div>
+            </div>
+            <div class="demo-text">
+                <span class="label">Invoicing</span>
+                <h2>Create invoices in seconds</h2>
+                <p>Don't waste time on paperwork. Select a customer, add line items, and hit send. Tofu does the math for you.</p>
+                <ul>
+                    <li>Save reusable templates</li>
+                    <li>Automatic tax calculations</li>
+                    <li>Send via Text or Email</li>
+                </ul>
+                <br>
+                <a href="#" style="color: var(--brand-blue); font-weight: 600;">Watch full tutorial &rarr;</a>
+            </div>
+        </div>
+
+        <div class="demo-row">
+            <div class="demo-media">
+                <img src="https://placehold.co/800x450/006AFF/fff?text=Video:+Tap+to+Pay+Demo" alt="Tap to Pay Demo">
+                <div class="play-btn"></div>
+            </div>
+            <div class="demo-text">
+                <span class="label">Payments</span>
+                <h2>Tap to Pay on iPhone</h2>
+                <p>No card reader? No problem. Accept contactless cards, Apple Pay, and Google Pay directly on your phone.</p>
+                <ul>
+                    <li>No extra hardware needed</li>
+                    <li>Secure and encrypted</li>
+                    <li>Instant deposit available</li>
+                </ul>
+                <br>
+                <a href="#" style="color: var(--brand-blue); font-weight: 600;">See compatible devices &rarr;</a>
+            </div>
+        </div>
+
+        <div class="demo-row">
+            <div class="demo-media">
+                <img src="https://placehold.co/800x450/111/333?text=Video:+Customer+Portal+Walkthrough" alt="Portal Demo">
+                <div class="play-btn"></div>
+            </div>
+            <div class="demo-text">
+                <span class="label">Client Experience</span>
+                <h2>A professional portal for your clients</h2>
+                <p>Give your clients a dedicated link to view estimates, pay outstanding invoices, and approve work orders.</p>
+                <ul>
+                    <li>Custom branded with your logo</li>
+                    <li>Clients can download receipts</li>
+                    <li>Reduce "What do I owe?" calls</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2>More Ways to Grow</h2>
+            <div class="gallery-grid">
+                <div class="gallery-card">
+                    <div class="demo-media">
+                        <img src="https://placehold.co/600x340/ddd/333?text=Video" alt="Thumbnail">
+                        <div class="play-btn" style="width: 50px; height: 50px;"></div>
+                    </div>
+                    <h3>Team Scheduling</h3>
+                    <p>How to dispatch jobs to your team.</p>
+                </div>
+                <div class="gallery-card">
+                    <div class="demo-media">
+                        <img src="https://placehold.co/600x340/ddd/333?text=Video" alt="Thumbnail">
+                        <div class="play-btn" style="width: 50px; height: 50px;"></div>
+                    </div>
+                    <h3>Expense Tracking</h3>
+                    <p>Snap photos of receipts and organize costs.</p>
+                </div>
+                <div class="gallery-card">
+                    <div class="demo-media">
+                        <img src="https://placehold.co/600x340/ddd/333?text=Video" alt="Thumbnail">
+                        <div class="play-btn" style="width: 50px; height: 50px;"></div>
+                    </div>
+                    <h3>Reporting & Taxes</h3>
+                    <p>Export your data for tax season effortlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to get to work?</h2>
+            <p>Join 2 million businesses using Tofu to get paid faster.</p>
+            <a href="#" class="btn btn-primary" style="background: white; color: black; border-color: white;">Get Started Free</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
+                <div>
+                    <a href="#" class="logo" style="margin-bottom: 16px;">
+                        <div class="logo-icon"></div>
+                        Tofu
+                    </a>
+                </div>
+                <div style="display: flex; gap: 60px;">
+                    <div>
+                        <h4 style="margin-bottom: 16px;">Product</h4>
+                        <ul style="list-style: none; font-size: 0.9rem; color: #555;">
+                            <li style="margin-bottom: 8px;"><a href="#">Invoicing</a></li>
+                            <li style="margin-bottom: 8px;"><a href="#">Payments</a></li>
+                            <li style="margin-bottom: 8px;"><a href="#">Checking</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom: 16px;">Support</h4>
+                        <ul style="list-style: none; font-size: 0.9rem; color: #555;">
+                            <li style="margin-bottom: 8px;"><a href="#">Help Center</a></li>
+                            <li style="margin-bottom: 8px;"><a href="#">Contact Us</a></li>
+                            <li style="margin-bottom: 8px;"><a href="#">Status</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 Tofu Inc.</span>
+                <div style="display: flex; gap: 24px;">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

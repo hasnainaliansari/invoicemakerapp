@@ -1,0 +1,355 @@
+.O05iFormAnalytics_O05iFormAnalytics__Jl5x6 .O05iFormAnalytics_toggle__BiW_1 {
+	margin-block-start: 28px;
+}
+
+.O05iFormAnalytics_O05iFormAnalytics__Jl5x6 p {
+	white-space: pre-line;
+}
+
+@media(min-width:768px) {
+	.O05iFormAnalytics_O05iFormAnalytics__Jl5x6 .O05iFormAnalytics_toggle__BiW_1 {
+		margin-block-start: var(--space-5);
+	}
+}
+
+:root {
+	--activeToggleColor: #611f69;
+	--inactiveToggleColor: var(--colorTextBlackSoft);
+	--transitionTime: 0.4s;
+	--translatePosition: 20px;
+}
+
+.sb-toggle {
+	position: relative;
+	display: inline-block;
+	width: 52px;
+	height: 32px;
+}
+
+.sb-toggle__input {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.sb-toggle__slider {
+	background-color: var(--colorTextBlackSoft);
+	background-color: var(--inactiveToggleColor);
+	border-radius: 50px;
+	transition: background-color .4s ease-out;
+	transition: var(--transitionTime) ease-out background-color;
+}
+
+.sb-toggle__slider:before {
+	position: absolute;
+	content: "";
+	height: 30px;
+	width: 30px;
+	left: 1px;
+	bottom: 1px;
+	background-color: var(--colorWhite);
+	transition: transform .4s ease-out;
+	transition: var(--transitionTime) ease-out transform;
+	border-radius: 50%;
+}
+
+.sb-toggle__input:checked+.sb-toggle__slider {
+	background-color: #611f69;
+	background-color: var(--activeToggleColor);
+}
+
+[data-focus-source=keyboard] .sb-toggle__input:focus+.sb-toggle__slider {
+	box-shadow: 0 0 0 3px #611f69;
+	box-shadow: 0 0 0 3px var(--activeToggleColor);
+}
+
+.sb-toggle__input:checked+.sb-toggle__slider:before {
+	transform: translateX(20px);
+	transform: translateX(var(--translatePosition));
+}
+
+.M05Toggle_M05Toggle__x3EA_ {
+	display: grid;
+	grid-template-columns: min-content auto;
+	align-items: center;
+	grid-gap: var(--space-2);
+	gap: var(--space-2);
+}
+
+.M05Toggle_M05Toggle__x3EA_ .M05Toggle_toggleContainer__4KxbS {
+	display: inline;
+}
+
+.M05Toggle_M05Toggle__x3EA_:not(.M05Toggle_mounted__yG_yM) {
+	opacity: 0;
+}
+
+.M05Toggle_M05Toggle__x3EA_ .M05Toggle_toggle__kMIt6 {
+	grid-column: 1/2;
+}
+
+.M05Toggle_M05Toggle__x3EA_[aria-disabled=true] {
+	cursor: not-allowed;
+}
+
+.M05Toggle_M05Toggle__x3EA_[aria-disabled=true] .M05Toggle_toggle__kMIt6 {
+	pointer-events: none;
+}
+
+.M05Toggle_M05Toggle__x3EA_ .M05Toggle_label__buhu8 {
+	grid-column: -2/-1;
+}
+
+.M05Toggle_M05Toggle__x3EA_ .M05Toggle_description__pilfV {
+	white-space: pre-wrap;
+	color: var(--colorBlack58);
+	grid-column: 1/-1;
+}
+
+@supports(text-wrap:pretty) {
+	.M05Toggle_M05Toggle__x3EA_ .M05Toggle_description__pilfV {
+		text-wrap: pretty;
+	}
+}
+
+[dir=rtl] .M05Toggle_M05Toggle__x3EA_ .sb-toggle__slider:before {
+	left: unset;
+	right: 1px;
+}
+
+[dir=rtl] .M05Toggle_M05Toggle__x3EA_ .sb-toggle__input:checked+.sb-toggle__slider:before {
+	transform: translateX(calc(var(--translatePosition) * -1));
+}
+
+.O74DeliveryChannels_O74DeliveryChannels___faFz {
+	background: var(--colorGreyCeramic);
+	border-radius: var(--border-radius-large);
+	padding: var(--space-3);
+}
+
+.O74DeliveryChannels_O74DeliveryChannels___faFz .O74DeliveryChannels_description__yq_1y {
+	color: var(--colorBlack58);
+	margin-block-start: var(--space-1);
+}
+
+.O74DeliveryChannels_O74DeliveryChannels___faFz .O74DeliveryChannels_list__lucNu {
+	margin-block-start: var(--space-4);
+}
+
+.O74DeliveryChannels_O74DeliveryChannels___faFz .O74DeliveryChannels_list__lucNu li:not(:last-child) {
+	margin-block-end: var(--space-2);
+}
+
+.O74DeliveryChannels_O74DeliveryChannels___faFz .O74DeliveryChannels_button__HDFFU {
+	block-size: 48px;
+	inline-size: 100%;
+	background: var(--colorWhite);
+	border-radius: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	text-align: center;
+	position: relative;
+	padding-inline: 45px;
+}
+
+@media(hover:hover)and (pointer:fine) {
+	.O74DeliveryChannels_O74DeliveryChannels___faFz .O74DeliveryChannels_button__HDFFU:hover {
+		background: var(--colorGreyNatural);
+	}
+}
+
+.O74DeliveryChannels_O74DeliveryChannels___faFz .O74DeliveryChannels_image__1YSD6 {
+	block-size: 24px;
+	inline-size: 24px;
+	position: absolute;
+	inset-block-start: 12px;
+	inset-inline-start: var(--space-3);
+}
+
+.O74DeliveryChannels_O74DeliveryChannels___faFz .O74DeliveryChannels_buttonLabel__Q56Xd {
+	position: relative;
+}
+
+.O74DeliveryChannels_O74DeliveryChannels___faFz .O74DeliveryChannels_externalLinkIcon__cS4r0 {
+	--icon-size: 32px;
+	position: absolute;
+	inset-block-start: -6px;
+	inset-inline-start: calc(100% + 5px);
+}
+
+@media(min-width:768px) {
+	.O74DeliveryChannels_O74DeliveryChannels___faFz .O74DeliveryChannels_title__l__PI {
+		font-size: var(--body-medium-font-size);
+		line-height: var(--body-medium-line-height);
+	}
+
+	.O74DeliveryChannels_O74DeliveryChannels___faFz .O74DeliveryChannels_buttonLabel__Q56Xd {
+		font-size: var(--body-small-font-size);
+		line-height: var(--body-small-line-height);
+	}
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB {
+	margin-block: var(--space-4) var(--space-3);
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_content__qDoVw {
+	background: var(--colorGreyCeramic);
+	padding: var(--space-4) var(--space-3);
+	border-radius: var(--border-radius-large);
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_row__sbVnB {
+	display: contents;
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_row__sbVnB .O32NutritionCalculator_label__uFqVu {
+	grid-column: 1/2;
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_row__sbVnB .O32NutritionCalculator_per100Gram__km0eU,.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_row__sbVnB .O32NutritionCalculator_value__1nkdB {
+	grid-column: 2/3;
+	color: var(--colorBlack58);
+	text-align: end;
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_servingRow__ghpP9 .O32NutritionCalculator_label__uFqVu,.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_servingRow__ghpP9 .O32NutritionCalculator_per100Gram__km0eU,.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_servingRow__ghpP9 .O32NutritionCalculator_value__1nkdB,.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_volumeRow__yOI8v .O32NutritionCalculator_label__uFqVu,.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_volumeRow__yOI8v .O32NutritionCalculator_per100Gram__km0eU,.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_volumeRow__yOI8v .O32NutritionCalculator_value__1nkdB {
+	position: relative;
+	color: var(--colorBlack87);
+	font-weight: var(--semi-bold-font-weight);
+	letter-spacing: var(--semi-bold-letter-spacing);
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_volumeRow__yOI8v .O32NutritionCalculator_label__uFqVu,.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_volumeRow__yOI8v .O32NutritionCalculator_per100Gram__km0eU,.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_volumeRow__yOI8v .O32NutritionCalculator_value__1nkdB {
+	position: relative;
+	padding-block-start: var(--space-3);
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_volumeRow__yOI8v .O32NutritionCalculator_label__uFqVu:after,.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_volumeRow__yOI8v .O32NutritionCalculator_per100Gram__km0eU:after,.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_volumeRow__yOI8v .O32NutritionCalculator_value__1nkdB:after {
+	block-size: 1px;
+	inline-size: 100%;
+	position: absolute;
+	content: "";
+	background-color: var(--colorBlack6);
+	inset-block-start: 0;
+	inset-inline-start: 0;
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_list__u7VOx {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-row-gap: var(--space-2);
+	row-gap: var(--space-2);
+	margin-block-start: var(--space-3);
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_list__u7VOx.O32NutritionCalculator_additionalNutritionInformation__9sm4_ {
+	grid-template-columns: 4fr 3fr 3fr;
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_list__u7VOx.O32NutritionCalculator_additionalNutritionInformation__9sm4_ .O32NutritionCalculator_row__sbVnB .O32NutritionCalculator_value__1nkdB {
+	grid-column: 3/3;
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_allergens__ikwXd {
+	margin-block-start: var(--space-3);
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_allergens__ikwXd .O32NutritionCalculator_allergensBody__j93qo {
+	color: var(--colorBlack58);
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_footnoteList__sJVUv {
+	margin-block-start: var(--space-3);
+	color: var(--colorBlack58);
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_footnoteList__sJVUv li {
+	display: contents;
+}
+
+@supports(text-wrap:pretty) {
+	.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_footnoteList__sJVUv li p {
+		text-wrap: pretty;
+	}
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_modifiedCopy__9G0jb {
+	margin-block-start: var(--space-2);
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_modifiedCta__7di5l {
+	margin-block-start: var(--space-4);
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_iconLink__C6aUY.O32NutritionCalculator_allergenLink__4VP34 {
+	white-space: normal;
+	inline-size: auto;
+	text-decoration: none;
+	margin-block-start: var(--space-3);
+}
+
+@supports(text-wrap:pretty) {
+	.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_iconLink__C6aUY.O32NutritionCalculator_allergenLink__4VP34 {
+		text-wrap: pretty;
+	}
+}
+
+.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_iconLink__C6aUY.O32NutritionCalculator_allergenLink__4VP34>span {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-1);
+}
+
+[dir=rtl] .O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_iconLink__C6aUY.O32NutritionCalculator_allergenLink__4VP34 .O32NutritionCalculator_icon__KWD3a {
+	transform: scaleX(-1);
+}
+
+@media(min-width:768px) {
+	.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_iconLink__C6aUY.O32NutritionCalculator_allergenLink__4VP34 {
+		margin-block-end: var(--space-2);
+	}
+
+	.O32NutritionCalculator_O32NutritionCalculator__s_mJB {
+		margin-block-start: var(--space-5);
+	}
+
+	.O32NutritionCalculator_O32NutritionCalculator__s_mJB .O32NutritionCalculator_modifiedCopy__9G0jb {
+		margin-block-start: var(--space-3);
+		font-size: var(--body-small-font-size);
+		line-height: var(--body-small-line-height);
+	}
+}
+
+.O62AddPaymentMethodModal_O62AddPaymentMethodModal__vFHFd {
+	padding-block: var(--space-2);
+}
+
+@media(min-width:768px) {
+	.O62AddPaymentMethodModal_O62AddPaymentMethodModal__vFHFd {
+		padding-block-end: var(--space-4);
+	}
+}
+
+.O62AddPaymentMethodModal_addPaymentMethodTray__qET4z .O62AddPaymentMethodModal_actions__NDpkz.O62AddPaymentMethodModal_actions__NDpkz {
+	justify-content: center;
+}
+
+@media(min-width:768px) {
+	.O62AddPaymentMethodModal_addPaymentMethodTray__qET4z .O62AddPaymentMethodModal_actions__NDpkz.O62AddPaymentMethodModal_actions__NDpkz {
+		justify-content: flex-end;
+	}
+}
+
+.O05ePushNotificationPreferences_O05ePushNotificationPreferences__ZvI8q {
+	margin-block-start: var(--space-4);
+}
+
+.O05ePushNotificationPreferences_dialogHeading__8cI1m {
+	padding-block-end: var(--space-2);
+}
