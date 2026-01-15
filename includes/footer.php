@@ -82,6 +82,293 @@
 	</div>
 </footer>
 
+<!-- 
+<script>
+	(function() {
+		// ===== 1) POLYFILL: crypto.randomUUID (important) =====
+		// Freshchat uses crypto.randomUUID while opening; on HTTP/older contexts it may not exist.
+		(function ensureRandomUUID() {
+			try {
+				if (typeof window.crypto === "undefined") return;
+
+				if (typeof window.crypto.randomUUID === "function") return;
+
+				window.crypto.randomUUID = function() {
+					var rnds = new Uint8Array(16);
+
+					if (window.crypto.getRandomValues) {
+						window.crypto.getRandomValues(rnds);
+					} else {
+						for (var i = 0; i < 16; i++) rnds[i] = Math.floor(Math.random() * 256);
+					}
+
+					// RFC4122 v4
+					rnds[6] = (rnds[6] & 0x0f) | 0x40;
+					rnds[8] = (rnds[8] & 0x3f) | 0x80;
+
+					var hex = [];
+					for (var j = 0; j < 16; j++) hex.push((rnds[j] + 0x100).toString(16).slice(1));
+
+					return (
+						hex[0] + hex[1] + hex[2] + hex[3] + "-" +
+						hex[4] + hex[5] + "-" +
+						hex[6] + hex[7] + "-" +
+						hex[8] + hex[9] + "-" +
+						hex[10] + hex[11] + hex[12] + hex[13] + hex[14] + hex[15]
+					);
+				};
+			} catch (e) {}
+		})();
+
+		// ===== 2) INJECT Freshchat =====
+		var FW_SRC = "https://fw-cdn.com/15014606/6493296.js";
+		var WIDGET_ID = "eae06dcd-146a-4ca7-adb0-bb70e81f2eca"; // ✅ your new widget id
+
+		function injectFreshchat() {
+			if (document.querySelector('script[data-freshchat="1"]')) return;
+
+			var s = document.createElement("script");
+			s.src = FW_SRC;
+			s.async = true;
+			s.setAttribute("chat", "true");
+			s.setAttribute("widgetId", WIDGET_ID);
+			s.setAttribute("data-freshchat", "1");
+
+			document.head.appendChild(s);
+		}
+
+		window.addEventListener("load", injectFreshchat);
+	})();
+</script>
+
+<style>
+	/* ✅ only keep launcher visible; DO NOT force open panel size */
+	#fc_frame {
+		z-index: 2147483647 !important;
+	}
+
+	/* closed state launcher size (when normal) */
+	#fc_frame.fc-widget-normal {
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+
+		/* width: 72px !important;
+		height: 72px !important;
+		min-width: 72px !important;
+		min-height: 72px !important; */
+
+		right: 15px !important;
+		bottom: 15px !important;
+		position: fixed !important;
+	}
+
+	/* ✅ when open, let Freshchat control the size */
+	#fc_frame.h-open-container,
+	#fc_frame.fc-open,
+	#fc_frame.h-open-container.fc-open {
+		width: auto !important;
+		height: auto !important;
+		min-width: unset !important;
+		min-height: unset !important;
+	}
+
+	#fc_frame.fc_dn,
+	#fc_frame.fc-widget-normal.fc_dn {
+		height: 100% !important;
+		min-height: 100% !important;
+		min-width: 100% !important;
+		opacity: 1 !important;
+		width: 100% !important;
+	}
+</style>
+ -->
+
+ <!-- working widget but loading cont -->
+
+
+<style>
+	/* Keep widget above everything */
+	#fc_frame {
+		z-index: 2147483647 !important;
+	}
+
+	/* IMPORTANT:
+     If Freshchat keeps launcher hidden with fc_dn, show it as a 72px bubble.
+     Do NOT use 100% here — it breaks open panel behavior. */
+	#fc_frame.fc_dn.fc-widget-normal,
+	#fc_frame.fc-widget-normal.fc_dn {
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+
+		width: 72px !important;
+		height: 72px !important;
+		min-width: 72px !important;
+		min-height: 72px !important;
+
+		right: 15px !important;
+		bottom: 15px !important;
+		position: fixed !important;
+		z-index: 2147483647 !important;
+		pointer-events: auto !important;
+	}
+</style>
+
+<script>
+	(function() {
+		var FW_SRC = "https://fw-cdn.com/15062622/6521061.js";
+		var WIDGET_ID = "c0d796fc-ca9c-4547-bc75-e7ca0bdf9a07";
+		var LAUNCHER_SIZE = 72;
+
+		// 1) Polyfill (only if missing)
+		try {
+			if (window.crypto && typeof window.crypto.randomUUID !== "function") {
+				window.crypto.randomUUID = function() {
+					var rnds = new Uint8Array(16);
+					if (crypto.getRandomValues) crypto.getRandomValues(rnds);
+					else
+						for (var i = 0; i < 16; i++) rnds[i] = Math.floor(Math.random() * 256);
+
+					rnds[6] = (rnds[6] & 0x0f) | 0x40;
+					rnds[8] = (rnds[8] & 0x3f) | 0x80;
+
+					var hex = [];
+					for (var j = 0; j < 16; j++) hex.push((rnds[j] + 0x100).toString(16).slice(1));
+
+					return (
+						hex[0] + hex[1] + hex[2] + hex[3] + "-" +
+						hex[4] + hex[5] + "-" +
+						hex[6] + hex[7] + "-" +
+						hex[8] + hex[9] + "-" +
+						hex[10] + hex[11] + hex[12] + hex[13] + hex[14] + hex[15]
+					);
+				};
+			}
+		} catch (e) {}
+
+		// 2) Inject Freshchat ONCE
+		function inject() {
+			if (window.__FW_WIDGET_INJECTED__) return;
+			window.__FW_WIDGET_INJECTED__ = true;
+
+			// if someone already placed the original embed, don't inject again
+			var already = document.querySelector('script[src="' + FW_SRC + '"]');
+			if (already) return;
+
+			var s = document.createElement("script");
+			s.src = FW_SRC;
+			s.async = true;
+
+			// Cloudflare Rocket Loader safe
+			s.setAttribute("data-cfasync", "false");
+
+			s.setAttribute("chat", "true");
+			s.setAttribute("widgetId", WIDGET_ID);
+			document.body.appendChild(s);
+		}
+
+		function isOpen(frame) {
+			// Freshworks uses these classes in open state
+			return frame.classList.contains("h-open-container") ||
+				frame.classList.contains("fc-open") ||
+				frame.classList.contains("fc-widget-open");
+		}
+
+		// 3) Force launcher visible ONLY when closed/hidden
+		function forceLauncherVisible() {
+			var frame = document.getElementById("fc_frame");
+			if (!frame) return;
+
+			if (isOpen(frame)) return; // do not fight open panel sizing
+
+			// if Freshchat hides it inline, fix it
+			if (frame.style.display === "none") frame.style.display = "block";
+
+			frame.style.visibility = "visible";
+			frame.style.opacity = "1";
+			frame.style.pointerEvents = "auto";
+			frame.style.position = "fixed";
+			frame.style.right = "15px";
+			frame.style.bottom = "15px";
+			frame.style.zIndex = "2147483647";
+
+			// stable launcher size
+			frame.style.width = LAUNCHER_SIZE + "px";
+			frame.style.height = LAUNCHER_SIZE + "px";
+			frame.style.minWidth = LAUNCHER_SIZE + "px";
+			frame.style.minHeight = LAUNCHER_SIZE + "px";
+
+			// remove hidden class
+			if (frame.classList.contains("fc_dn")) frame.classList.remove("fc_dn");
+		}
+
+		// 4) When open, remove forced size so Freshchat can render panel properly
+		function releaseOpenSizing() {
+			var frame = document.getElementById("fc_frame");
+			if (!frame) return;
+
+			// let Freshchat control open panel
+			frame.style.width = "";
+			frame.style.height = "";
+			frame.style.minWidth = "";
+			frame.style.minHeight = "";
+		}
+
+		// 5) Observe and auto-fix if it goes hidden again
+		function observeFrame() {
+			var frame = document.getElementById("fc_frame");
+			if (!frame || frame.__OBS__) return;
+			frame.__OBS__ = true;
+
+			new MutationObserver(function() {
+				if (!isOpen(frame) && (frame.classList.contains("fc_dn") || frame.style.display === "none")) {
+					forceLauncherVisible();
+				}
+			}).observe(frame, {
+				attributes: true,
+				attributeFilter: ["class", "style"]
+			});
+		}
+
+		// 6) Boot
+		function boot() {
+			inject();
+
+			var tries = 0;
+			var t = setInterval(function() {
+				tries++;
+
+				forceLauncherVisible();
+				observeFrame();
+
+				if (window.fcWidget) {
+					try {
+						// make sure launcher is shown
+						window.fcWidget.show();
+
+						// hook open/close
+						window.fcWidget.on("widget:opened", function() {
+							releaseOpenSizing();
+						});
+						window.fcWidget.on("widget:closed", function() {
+							forceLauncherVisible();
+						});
+					} catch (e) {}
+				}
+
+				// stop polling after it exists and we have applied visibility
+				if (document.getElementById("fc_frame") && tries > 60) clearInterval(t);
+				if (tries > 300) clearInterval(t);
+			}, 50);
+		}
+
+		if (document.readyState === "complete") boot();
+		else window.addEventListener("load", boot);
+	})();
+</script>
+
+
 <style>
 	.btn {
 		display: inline-block;
